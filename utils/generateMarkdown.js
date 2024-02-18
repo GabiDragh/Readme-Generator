@@ -40,7 +40,7 @@ function generateTableOfContents(answers) {
   if (answers.license) {
     tableOfContents += `- [License](#license)\n`;
   }
-  if (answers.constributing) {
+  if (answers.contributing) {
     tableOfContents += `- [Contributing](#contributing)\n`;
   }
   if (answers.tests) {

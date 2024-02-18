@@ -1,27 +1,27 @@
-# Title
+# title
 
 ## Description 
-description
+desc
 
 ## Table of Contents
-- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+- [Contributing](#contributing)
 - [Tests](#tests)
 
 
 ## Instalation 
-install
+instr
 
 ## Usage 
-usage
+use
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Apache License 2.0.
 
 ## Contributing
-guidelines
+contr
 
 ## Tests
 test
