@@ -34,7 +34,7 @@ const questions = [
         type: `list`,
         message: `Please choose the license you would like to apply to your project`,
         name: `license`,
-        choices: [``]
+        choices: [`GNU AGPLv3`, `Mozilla Public License 2.0`, `Apache License 2.0`, `MIT LIcense`, `Boost Software License 1.0`, `The Unlicense`]
     },
     {
         type: `input`,
@@ -58,13 +58,14 @@ const questions = [
 function init() {
 inquirer
  .prompt(questions)     //can either pass const questions or pass the array straight in here
- .then((data) => { //callback function
-    console.log(data); //JSON.stringify?
-    const datas = `${data.name.toLowerCase().split(' ').join('')}.json`;
-    fs.writeFile(`answers.md`, JSON.stringify(data, null, '\n'), (err) =>
+ .then((answers) => { //callback function
+    console.log(answers); //JSON.stringify?
+    // console.log(answers.title);
+    const markdown = generateMarkdown(answers);
+    // generateMarkdown();
+    fs.writeFile(`answers.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
-    
 }); 
 
 }
