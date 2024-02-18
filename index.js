@@ -46,11 +46,14 @@ const questions = [
         message: `Please provide test instructions.`,
         name: `tests`,
     },
+
+    //When a user enters their GitHub username then this is added to the section of the README entitled Questions, with a link to their GitHub profile
+    //When a user enters their email address then this is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions
     // {
     //     type: `input`,
     //     message: `Please provide test instructions.`,
     //     name: `questions`,
-    // },
+    // }, 
 ];
 
 // console.log(questions);
@@ -62,11 +65,12 @@ const questions = [
 // function to initialize program
 function init() {
 inquirer
- .prompt(questions)     //can either pass const questions or pass the array straight in here
- .then((answers) => { //callback function
-    console.log(answers); //JSON.stringify?
+ .prompt(questions)
+ .then((answers) => { 
+    console.log(answers); 
     // console.log(answers.title);
     const tableOfContents = generateTableOfContents(answers);
+    // define const generateBadge from generate markdown file and pass into const markdown below
     const markdown = generateMarkdown(answers, tableOfContents);
 
     fs.writeFile(`answers.md`, markdown, (err) =>
@@ -78,8 +82,3 @@ inquirer
 
 // function call to initialize program
 init();
-
-//fs.writeFile("./dir/README.md") - an example, assignment doesn't specify where it saves.
-
-//biggest challenge - formatting (One way would be to create the README as a string with string literal, then write that to the file.) Use ``. #In front to get the readme bold. This is what Generate markdown folder is for. 
-// Create the final README structure with string literal first, with #, ##, spaces etc., then just put the data where it is needed.

@@ -3,10 +3,10 @@
 function generateMarkdown(answers) {
   return `# ${answers.title}
 
-${generateTableOfContents(answers)}
-
 ## Description 
 ${answers.description}
+
+${generateTableOfContents(answers)}
 
 ## Instalation 
 ${answers.installation}
@@ -54,5 +54,7 @@ function generateTableOfContents(answers) {
   // }
   return tableOfContents;
 }
+
+//write function to generateBadge when the license is selected, add straight under the title
 
 module.exports = {generateMarkdown, generateTableOfContents};
