@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require('path');//native to node as a library
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const {generateMarkdown, generateTableOfContents} = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
@@ -34,7 +34,7 @@ const questions = [
         type: `list`,
         message: `Please choose the license you would like to apply to your project`,
         name: `license`,
-        choices: [`GNU AGPLv3`, `Mozilla Public License 2.0`, `Apache License 2.0`, `MIT LIcense`, `Boost Software License 1.0`, `The Unlicense`]
+        choices: [`GNU AGPLv3`, `Mozilla Public License 2.0`, `Apache License 2.0`, `MIT License`, `Boost Software License 1.0`, `The Unlicense`]
     },
     {
         type: `input`,
@@ -46,6 +46,11 @@ const questions = [
         message: `Please provide test instructions.`,
         name: `tests`,
     },
+    // {
+    //     type: `input`,
+    //     message: `Please provide test instructions.`,
+    //     name: `questions`,
+    // },
 ];
 
 // console.log(questions);
@@ -61,8 +66,9 @@ inquirer
  .then((answers) => { //callback function
     console.log(answers); //JSON.stringify?
     // console.log(answers.title);
-    const markdown = generateMarkdown(answers);
-    // generateMarkdown();
+    const tableOfContents = generateTableOfContents(answers);
+    const markdown = generateMarkdown(answers, tableOfContents);
+
     fs.writeFile(`answers.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
