@@ -5,26 +5,67 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
-
+    {
+        type: `input`,
+        message: `What is the title of your project?`,
+        name: `title`,
+    },
+    {
+        type: `input`,
+        message: `Please provide a project description.`,
+        name: `description`,
+    },
+    // {
+    //     type: `input`,
+    //     message: `Would you like to create a table of contents`,
+    //     name: `table-of-contents`,
+    // },
+    {
+        type: `input`,
+        message: `Please provide installation instructions`,
+        name: `installation`,
+    },
+    {
+        type: `input`,
+        message: `Please provide usage information.`,
+        name: `usage`,
+    },
+    {
+        type: `list`,
+        message: `Please choose the license you would like to apply to your project`,
+        name: `license`,
+        choices: [``]
+    },
+    {
+        type: `input`,
+        message: `Please provide conntribution guidelines.`,
+        name: `contributing`,
+    },
+    {
+        type: `input`,
+        message: `Please provide test instructions.`,
+        name: `tests`,
+    },
 ];
 
+// console.log(questions);
+
 // function to write README file
-function writeToFile(fileName, data) {
-}
+// function writeToFile(fileName, data) {
+// }
 
 // function to initialize program
 function init() {
 inquirer
-.prompt(//[
-   // {
-        //object keys from inquirer documentation
-   // }
-//]/questions) //can either pass const questions or pass the array straight in here
-.then((answers) => { //callback function
-    console.log(answers);
-    fs.writeFile(`log.txt`, //answers.name 
-    )
-});
+ .prompt(questions)     //can either pass const questions or pass the array straight in here
+ .then((data) => { //callback function
+    console.log(data); //JSON.stringify?
+    const datas = `${data.name.toLowerCase().split(' ').join('')}.json`;
+    fs.writeFile(`answers.md`, JSON.stringify(data, null, '\n'), (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+    
+}); 
 
 }
 
