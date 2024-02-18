@@ -31,9 +31,6 @@ function generateTableOfContents(answers) {
 
   let tableOfContents = `## Table of Contents\n`;
 
-  if (answers.description) {
-    tableOfContents += `- [Description](#description)\n`;
-  }
   if (answers.installation) {
     tableOfContents += `- [Installation](#installation)\n`;
   }
