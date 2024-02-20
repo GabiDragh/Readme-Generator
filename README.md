@@ -55,4 +55,4 @@ For additional questions, please email me at draghici.gabi89@gmail.com.
 
 ## Demo 
 
-![Demo Video](ReadMe-Generator_Gabriela-Draghici_Feb_20_2024_5_55_PM.webm "Demo video")
+![Demo Video](./assets/video/ReadMe-Generator.gif "Demo video")
