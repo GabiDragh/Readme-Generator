@@ -43,14 +43,15 @@ The project is open for contributions. Please clone the Github repo into your co
 Testing can be performed using the instructions in the Installation section.
 
 ## Questions
-You can find my GitHub profile [here](https://github.com/GabiDragh)
+You can find my GitHub profile [here](https://github.com/GabiDragh).
 
-For additional questions, please email me at draghici.gabi89@gmail.com
+For additional questions, please email me at draghici.gabi89@gmail.com.
 
 ## References
  
-License badge link - https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-NPM inquirer package - https://www.npmjs.com/package/inquirer/v/6.5.0
+- [NPM inquirer package](https://www.npmjs.com/package/inquirer/v/6.5.0)
+- [ImgShields](https://shields.io/)
+- [License badge repo link](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
 ## Demo 
 
