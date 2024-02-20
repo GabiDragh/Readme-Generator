@@ -7,18 +7,21 @@ Week 11 Bootcamp Challenge
 Bootcamp week 11 challenge usind node.js and npm inquirer v6.5.0 to create a computer generated readme file based on prompted user input.
 
 ## Table of Contents
+- [Steps to create the project](#steps-to-create-the-project)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+- [References](#references)
+- [Demo](#demo)
 
-## Steps taken to create the project
+## Steps to create the project
 1. Installed node.js from https://nodejs.org/en (the "Recommended for Most Users" version). 
 2. Ran "npm init -y" in the terminal to create a standard package.json file that contains all of the installed packages.
 3. Ran "npm i inquirer@6.5.0v" to install the inquirer pack, which allows node to run the interactive command lines asking for user input.
-4. Wrote the code (markdown, table of contents and badge functions added to generateMArkdown file, and questions with the inquirer initialize function in the index.js file).
+4. Wrote the code (markdown, table of contents and badge functions added to generateMarkdown.js file, and questions with the inquirer initialize function in the index.js file).
 4. Ran "node index.js" to see the Readme file sections where data can be entered, enter information required, write it to README file.
 5. Add, commit and push the files on Github.
 
