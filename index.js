@@ -15,11 +15,6 @@ const questions = [
         message: `Please provide a project description.`,
         name: `description`,
     },
-    // {
-    //     type: `input`,
-    //     message: `Would you like to create a table of contents`,
-    //     name: `table-of-contents`,
-    // },
     {
         type: `input`,
         message: `Please provide installation instructions`,
@@ -46,14 +41,16 @@ const questions = [
         message: `Please provide test instructions.`,
         name: `tests`,
     },
-
-    //When a user enters their GitHub username then this is added to the section of the README entitled Questions, with a link to their GitHub profile
-    //When a user enters their email address then this is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions
-    // {
-    //     type: `input`,
-    //     message: `Please provide test instructions.`,
-    //     name: `questions`,
-    // }, 
+    {
+        type: `input`,
+        message: `Please enter your GitHub profile username for user questions.`,
+        name: `username`,
+    }, 
+    {
+        type: `input`,
+        message: `Please enter your email address for user questions.`,
+        name: `email`,
+    },
 ];
 
 // console.log(questions);
@@ -74,7 +71,7 @@ inquirer
     // define const generateBadge from generate markdown file and pass into const markdown below
     const markdown = generateMarkdown(answers, badge, tableOfContents);
 
-    fs.writeFile(`answers5.md`, markdown, (err) =>
+    fs.writeFile(`answers6.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
 }); 

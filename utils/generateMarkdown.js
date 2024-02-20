@@ -10,7 +10,7 @@ ${answers.description}
 
 ${generateTableOfContents(answers)}
 
-## Instalation 
+## Installation 
 ${answers.installation}
 
 ## Usage 
@@ -24,6 +24,11 @@ ${answers.contributing}
 
 ## Tests
 ${answers.tests}
+
+## Questions
+You can find my GitHub profile [here](https://github.com/${answers.username})\n
+
+For additional questions, please email me at ${answers.email}
 
 `;
 }
@@ -49,7 +54,10 @@ function generateTableOfContents(answers) {
   if (answers.tests) {
     tableOfContents += `- [Tests](#tests)\n`;
   }
-  // if (answers.questions) {
+  if (answers.username, answers.email) {
+    tableOfContents += `- [Questions](#questions)\n`;
+  }
+  // if (answers.email) {
   //   tableOfContents += `- [Questions](#questions)\n`;
   // }
   return tableOfContents;
