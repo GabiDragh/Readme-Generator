@@ -54,4 +54,4 @@ NPM inquirer package - https://www.npmjs.com/package/inquirer/v/6.5.0
 
 ## Demo 
 
-![Demo Video](ReadMe-Generator_Gabriela-Draghici_Feb_20_2024_5_55_PM.webm?raw=true "Demo video")
+![Demo Video](ReadMe-Generator_Gabriela-Draghici_Feb_20_2024_5_55_PM.webm "Demo video")
