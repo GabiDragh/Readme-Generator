@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require('path');//native to node as a library
 const inquirer = require("inquirer");
-const {generateMarkdown, generateTableOfContents} = require("./utils/generateMarkdown");
+const {generateMarkdown, generateTableOfContents, generateBadge} = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
@@ -34,7 +34,7 @@ const questions = [
         type: `list`,
         message: `Please choose the license you would like to apply to your project`,
         name: `license`,
-        choices: [`GNU AGPLv3`, `Mozilla Public License 2.0`, `Apache License 2.0`, `MIT License`, `Boost Software License 1.0`, `The Unlicense`]
+        choices: [`MIT License`, `GNU AGPLv3`, `Mozilla Public License 2.0`, `Apache License 2.0`, `Boost Software License 1.0`, `The Unlicense`]
     },
     {
         type: `input`,
@@ -70,10 +70,11 @@ inquirer
     console.log(answers); 
     // console.log(answers.title);
     const tableOfContents = generateTableOfContents(answers);
+    const badge = generateBadge(answers);
     // define const generateBadge from generate markdown file and pass into const markdown below
-    const markdown = generateMarkdown(answers, tableOfContents);
+    const markdown = generateMarkdown(answers, badge, tableOfContents);
 
-    fs.writeFile(`answers.md`, markdown, (err) =>
+    fs.writeFile(`answers5.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
 }); 
