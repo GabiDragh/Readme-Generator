@@ -58,22 +58,22 @@ const questions = [
 // function writeToFile(fileName, data) {
 // }
 
-// function to initialize program
+// Function to initialize program
 function init() {
-inquirer
- .prompt(questions)
- .then((answers) => { 
+inquirer //inquirer v 6.5.0 installed
+ .prompt(questions) //ask user questions
+ .then((answers) => {
     // console.log(answers); 
     // const tableOfContents = generateTableOfContents(answers);
     // const badge = generateBadge(answers);
     // console.log(badge);
     const markdown = generateMarkdown(answers);
-    fs.writeFile(`answers.md`, markdown, (err) =>
+    fs.writeFile(`sample.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
 }); 
 
 }
 
-// function call to initialize program
+// Function call to initialize program
 init();

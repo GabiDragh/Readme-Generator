@@ -1,5 +1,4 @@
 // Function to generate markdown for README
-
 function generateMarkdown(answers) {
   return `# ${answers.title}
 
@@ -58,7 +57,7 @@ function generateTableOfContents(answers) {
   return tableOfContents;
 }
 
-//write function to generateBadge when the license is selected, add straight under the title
+//Function to generate badge when the license is selected, added straight under the title
 function generateBadge(answers) {
 let badgeLink = "";
 
