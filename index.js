@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require('path');//native to node as a library
 const inquirer = require("inquirer");
-const {generateMarkdown, generateTableOfContents, generateBadge} = require("./utils/generateMarkdown");
+const {generateMarkdown} = require("./utils/generateMarkdown");
 
-// array of questions for user
+// Array of questions for user
 const questions = [
     {
         type: `input`,
@@ -52,10 +52,9 @@ const questions = [
         name: `email`,
     },
 ];
-
 // console.log(questions);
 
-// function to write README file
+// function to write README file - write data included in the init function
 // function writeToFile(fileName, data) {
 // }
 
@@ -64,14 +63,12 @@ function init() {
 inquirer
  .prompt(questions)
  .then((answers) => { 
-    console.log(answers); 
-    // console.log(answers.title);
-    const tableOfContents = generateTableOfContents(answers);
-    const badge = generateBadge(answers);
-    // define const generateBadge from generate markdown file and pass into const markdown below
-    const markdown = generateMarkdown(answers, badge, tableOfContents);
-
-    fs.writeFile(`answers6.md`, markdown, (err) =>
+    // console.log(answers); 
+    // const tableOfContents = generateTableOfContents(answers);
+    // const badge = generateBadge(answers);
+    // console.log(badge);
+    const markdown = generateMarkdown(answers);
+    fs.writeFile(`answers.md`, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
 }); 

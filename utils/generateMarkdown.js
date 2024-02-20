@@ -27,15 +27,13 @@ ${answers.tests}
 
 ## Questions
 You can find my GitHub profile [here](https://github.com/${answers.username})\n
-
 For additional questions, please email me at ${answers.email}
-
 `;
 }
 
 //Function to generate the Table of Contents depending on the user input
 function generateTableOfContents(answers) {
-  console.log("answers received:", answers);
+  // console.log("answers received:", answers);
 
   let tableOfContents = `## Table of Contents\n`; //\n used for new line
 
@@ -57,9 +55,6 @@ function generateTableOfContents(answers) {
   if (answers.username, answers.email) {
     tableOfContents += `- [Questions](#questions)\n`;
   }
-  // if (answers.email) {
-  //   tableOfContents += `- [Questions](#questions)\n`;
-  // }
   return tableOfContents;
 }
 
@@ -82,7 +77,7 @@ if (answers.license === "MIT License") {
 } else {
   badgeLink = `None selected`
 }
-  console.log(badgeLink);
+  // console.log(badgeLink);
   return badgeLink;
 }
 
